@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const post = require("../models/post");
+const post = require("../models/Post");
 
 router.get("", async (req, res) => {
   try {
     const locals = {
-      title: "NodeJs",
+      title: "ChroniQuill",
       description: "NodeJs,Mongodb and Express ",
     };
 
@@ -41,17 +41,44 @@ router.get("/contact", (req, res) => {
   res.render("contact");
 });
 
-module.exports = router;
+router.get("/post/:id", async (req, res) => {
+  try {
+    let slug = req.params.id;
+    const data = await post.findById({ _id: slug });
+    const locals = {
+      title: data.title,
+      description: "NodeJs,Mongodb and Express ",
+    };
+    res.render("post", { locals, data });
+  } catch (error) {
+    console.log(error);
+  }
+});
 
-// router.get("", async (req, res) => {
-//   const locals = {
-//     title: "NodeJs",
-//     description: "NodeJs,Mongodb and Express ",
-//   };
-//   try {
-//     const data = await post.find();
-//     res.render("index", { locals, data });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
+router.post("/search", async (req, res) => {
+  try {
+    const locals = {
+      title: "Search",
+      description: "NodeJs,Mongodb and Express ",
+    };
+
+    let searchTerm = req.body.searchTerm;
+    const searchNoSpecialCharacter = searchTerm.replace(/[^a-zA-z0-9]/g, "");
+
+    const data = await post.find({
+      $or: [
+        { title: { $regex: new RegExp(searchNoSpecialCharacter, "i") } },
+        { body: { $regex: new RegExp(searchNoSpecialCharacter, "i") } },
+      ],
+    });
+
+    res.render("search", {
+      data,
+      locals,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+module.exports = router;

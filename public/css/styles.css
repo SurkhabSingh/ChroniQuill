@@ -36,9 +36,9 @@ textarea {
 }
 
 .btn {
-  background-color: var(--black);
+  background-color: #faf5ee;
   border: none;
-  color: white;
+  color: rgb(12, 11, 11);
   padding: 16px 32px;
   text-decoration: none;
   margin: 4px 2px;
@@ -131,16 +131,16 @@ img {
   align-items: center;
   border: 0;
   padding: 6px 12px;
-  background: #faf5ee;
+  background: black;
   border-radius: 10px;
   border: 2px solid transparent;
   font-size: 1rem;
-  /* font-weight: 600; */
-  color: var(--black);
+  font-weight: 600;
+  color: #faf5ee;
 }
 
 .header-btn button:hover {
-  border: 2px solid #b30000;
+  border: 2px solid #faf5ee;
 }
 
 .header-nav ul {
@@ -250,7 +250,10 @@ img {
 }
 
 .articles {
-  white-space: pre-wrap;
+  /* white-space: pre-wrap; */
+  padding: 10px;
+  font-weight: 400;
+  color: #faf5ee;
 }
 
 .footer {
@@ -311,7 +314,7 @@ img {
   border: 0;
 }
 
-.searchClose {
+#searchClose {
   position: absolute;
   top: 0;
   right: 0;
