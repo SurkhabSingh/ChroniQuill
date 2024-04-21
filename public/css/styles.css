@@ -266,21 +266,24 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: #faf5ee;
 }
 
 .admin-posts {
   padding: 0;
   margin: 0;
+  color: #faf5ee;
 }
 
 .admin-post-controls form {
   display: inline-block;
+  color: #faf5ee;
 }
 
 .admin-post-controls .btn {
   display: inline-block;
   background-color: var(--black);
-  color: var(--gray-light);
+  color: #faf5ee;
   border: 0;
   text-decoration: none;
   font-size: 0.8rem;
@@ -292,6 +295,7 @@ img {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
+  color: #faf5ee;
 }
 
 .searchbar {

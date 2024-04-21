@@ -37,10 +37,6 @@ router.get("/about", (req, res) => {
   res.render("about");
 });
 
-router.get("/contact", (req, res) => {
-  res.render("contact");
-});
-
 router.get("/post/:id", async (req, res) => {
   try {
     let slug = req.params.id;
