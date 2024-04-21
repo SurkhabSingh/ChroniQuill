@@ -12,6 +12,8 @@ Welcome to Chroniquill, a blogging website powered by Node.js, Express, and EJS!
 - **Responsive Design:** Enjoy a seamless experience across all devices.
   
 - **Robust Backend:** The backend ensures fast and reliable performance.
+
+- **Searching:** You can search a post using its name or a its body.
   
 ## Screenshots 
 ![image](https://github.com/SurkhabSingh/ChroniQuill/assets/120186223/8bb6bf10-659c-4856-8b9f-38ffae813c2b)
